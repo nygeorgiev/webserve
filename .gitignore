@@ -1,0 +1,11 @@
+build/
+__pycache__
+webserve.egg-info
+
+environment.yml
+
+env/
+venv/
+
+.env/
+.venv/

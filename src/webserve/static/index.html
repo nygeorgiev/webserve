@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WebServe</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="main.css" rel="stylesheet">
+
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="config.js"></script>
+    <script src="display.js"></script>
+    <script src="stream.js"></script>
+</head>
+
+<body>
+    <div class="confirm" id="confirm-popup">
+        <div class="confirm-background"></div>
+        <div class="confirm-window" align="center">
+            <div id="confirm-message">Are you sure you want to permanently delete this chat?</div>
+            <div class="confirm-choices">
+                <input type="button" class="highlighed-btn" value="Yes" onclick="clearChat()">
+                <input type="button" class="normal-btn" value="No" onclick="rejectClearChat()">
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-container">
+            <div onclick="changeMode()" class="mode"><i class="fa-regular fa-lightbulb"></i></div>
+        </div>
+    </div>
+    <div class="content">
+        <p id="model-name" align="center">WebServe Model</p>
+
+        <div id="messages"></div>
+
+        <div class="user-area">
+            <div class="input-container">
+                <span class="textarea" id="input-msg" role="textbox" contenteditable></span>
+            </div>
+
+            <input id="json-btn" class="highlighed-btn" type="button" value="Export as JSON" onclick="downloadJSON()">
+            <input id="clear-btn" class="normal-btn" type="button" value="Clear" onclick="askClearConfirm()">
+            <input id="stop-btn" class="highlighed-btn" type="button" value="Stop" onclick="stopStreaming()">
+        </div>
+    </div>
+    <script>
+        init();
+
+        const inputSpan = document.getElementById("input-msg");
+
+        inputSpan.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                sendMessage();
+                event.preventDefault(); // stop link navigation
+                event.stopPropagation();
+            }
+        });
+    </script>
+</body>
+</html>

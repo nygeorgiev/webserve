@@ -1,0 +1,210 @@
+:root {
+    --background: #ffffff;
+    --smooth: #333333;
+    --scrollbar: #f1f1f1;
+    --inner-padding: 20px;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--smooth);
+    scrollbar-color: var(--scrollbar);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 var(--scrollbar);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar);
+}
+
+.confirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.2;
+}
+
+.confirm-window {
+    width: 340px;
+    padding: 20px 40px 15px 40px;
+    background-color: var(--background);
+    transform: translateY(-15vh);
+    border: 3px solid var(--smooth);
+}
+
+#confirm-message {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.confirm-window input[type="button"] {
+    margin: 0px 15px 15px 15px;
+    padding: 3px 20px 3px 20px;
+    border: 1px solid var(--smooth);
+    border-radius: 2px;
+}
+
+.header {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 2px solid var(--smooth);
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.header-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.mode {
+    display: block;
+    float: right;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 31px;
+    height: 44px;
+    border: 3px solid var(--smooth);
+    border-radius: 4px;
+    font-size: 26px;
+    padding-left: 3px;
+}
+
+.content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#model-name {
+    text-justify: center;
+    width: 100%;
+    margin-bottom: 10vh;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.user-area {
+    margin-bottom: 25vh;
+}
+
+.user-area input[type="button"] {
+    margin-top: 10px;
+    border: 1px solid var(--smooth);
+    border-radius: 2px;
+    padding: 5px 10px 5px 10px;
+    display: none;
+}
+
+.input-container {
+    width: 100%;
+    border: 2px solid var(--smooth);
+    border-radius: 3px;
+    padding: 5px 10px 5px 10px;
+}
+
+.textarea {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+    font-size: 1rem;
+    min-height: 1rem;
+    padding: 2px;
+    vertical-align: middle;  
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "Chat here and press enter to submit...";
+  color: gray;
+}
+
+.input-container textarea:focus {
+    outline: none;
+}
+
+.message-wrapper {
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.user-message {
+    float: right;
+    border: 2px solid var(--smooth);
+    border-radius: 3px;
+    padding: 10px;
+    max-width: 600px;
+    white-space: normal;          /* allow wrapping */
+    word-wrap: break-word;        /* legacy support */
+    overflow-wrap: break-word;
+}
+
+.assistant-message {
+    float: left;
+    border: 2px solid var(--smooth);
+    border-radius: 3px;
+    overflow-x: none;
+    overflow-y: none;
+    padding: 10px;
+    max-width: 600px;
+    background-color: var(--scrollbar);
+    white-space: normal;          /* allow wrapping */
+    word-wrap: break-word;        /* legacy support */
+    overflow-wrap: break-word;
+}
+
+.error-message {
+    color: rgb(204, 72, 72);
+}
+
+.highlighed-btn {
+    outline: none;
+    background-color: var(--smooth);
+    color: var(--background);
+    cursor: pointer;
+}
+
+.normal-btn  {
+    outline: none;
+    background-color: var(--background);
+    color: var(--smooth);
+    cursor: pointer;
+}
+
+.normal-btn:hover {
+    background-color: var(--smooth);
+    color: var(--background);
+}
