@@ -51,10 +51,6 @@ def main():
 
     args = parser.parse_args()
 
-    if args.version:
-        print(f"\033[34m(VERSION)\033[0m WebServe version {__version__}")
-        return
-
     print(f"\033[34m(NOTICE)\033[0m Launching WebServe version {__version__}...")
 
     port = args.port
