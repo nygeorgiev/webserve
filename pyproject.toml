@@ -25,6 +25,12 @@ authors = [
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools]
+py-modules = ['webserve']
+
+[tool.setuptools.package-data]
+webserve = ['static/*']
+
 [project.scripts]
 webserve = "webserve.__main__:main"
 
